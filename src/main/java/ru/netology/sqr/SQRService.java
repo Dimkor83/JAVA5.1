@@ -2,21 +2,18 @@ package ru.netology.sqr;
 
 public class SQRService {
 
-    public static void main(int numberOccurence) {
 
 
-    }
-}
+    public int entry(int lowerLimit, int upperLimit) {
 
-class OccurenceCounter {
-    public int occurenceOfCount() {
         int numberOccurence = 0;
         for (int i = 10; i <= 99; i++) {
-            if (i * i < 300)
-                if (i * i > 200) {
-                    System.out.println("Количество вхождений: " + numberOccurence);
-                    numberOccurence++;
-                }
+            int j = i * i;
+
+            if (j > lowerLimit && j < upperLimit) {
+                System.out.println("Количество вхождений: " + numberOccurence++);
+
+            }
         }
         return numberOccurence++;
     }

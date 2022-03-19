@@ -1,19 +1,18 @@
 package ru.netology.sqr;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SQRServiceTest {
 
     @ParameterizedTest
-    public void shouldCalculate() {
+    @CsvSource(value = "positiveTest,200,300,3")
+    public void shouldCalculate(String testName, int lowerLimit, int upperLimit, long expected) {
         SQRService service = new SQRService();
-//        int numberOccurence = 0;
-        int i = 15;
-        long expected = 3;
 
-        long actual = service.main();
+        long actual = service.entry(lowerLimit, upperLimit);
 
         assertEquals(expected, actual);
 
