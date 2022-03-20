@@ -10,11 +10,11 @@ public class SQRService {
         for (int i = 10; i <= 99; i++) {
             int j = i * i;
 
-            if (j > lowerLimit && j < upperLimit) {
+            if (j >= lowerLimit && j <= upperLimit) {
                 System.out.println("Количество вхождений: " + numberOccurence++);
 
             }
         }
-        return numberOccurence++;
+        return numberOccurence;
     }
 }
